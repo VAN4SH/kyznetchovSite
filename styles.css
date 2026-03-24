@@ -1,4 +1,15 @@
-/* RoyalAvenue - тёмная тема, простые стили */
+/* RoyalAvenue — тёмная тема, простые переменные (удобно менять цвета) */
+:root {
+  --bg: #0f1114;
+  --bg-card: #1a1e26;
+  --bg-header: #0a0c0f;
+  --text: #e8eaed;
+  --text-muted: #9aa3b2;
+  --accent: #f0c14b;
+  --accent-soft: rgba(240, 193, 75, 0.15);
+  --border: rgba(255, 255, 255, 0.08);
+  --radius: 14px;
+}
 
 * {
   margin: 0;
@@ -7,226 +18,245 @@
 }
 
 body {
-  font-family: Georgia, "Times New Roman", serif;
-  background-color: #1a1a1a;
-  color: #e0e0e0;
-  line-height: 1.6;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 18px;
+  line-height: 1.65;
+  background-color: var(--bg);
+  color: var(--text);
   min-height: 100vh;
 }
 
-/* Шапка сайта */
+/* Шапка */
 header {
-  background-color: #0d0d0d;
-  padding: 20px 0;
-  border-bottom: 2px solid #c9a227;
+  background-color: var(--bg-header);
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
 }
 
 header .container {
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  gap: 16px;
 }
 
 .logo {
-  font-size: 28px;
-  font-weight: bold;
-  color: #c9a227;
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--accent);
   text-decoration: none;
-  letter-spacing: 2px;
+  letter-spacing: 0.04em;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 8px 20px;
   flex-wrap: wrap;
 }
 
 nav a {
-  color: #e0e0e0;
+  color: var(--text);
   text-decoration: none;
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 4px;
-  transition: background-color 0.3s, color 0.3s;
+  font-size: 1.05rem;
+  padding: 10px 16px;
+  border-radius: 999px;
+  transition: background-color 0.25s, color 0.25s;
 }
 
 nav a:hover {
-  background-color: #c9a227;
-  color: #1a1a1a;
+  background-color: var(--accent-soft);
+  color: var(--accent);
 }
 
-/* Основной контент */
+/* Контент */
 .container {
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
 main {
-  padding: 40px 0 60px;
+  padding: 48px 0 72px;
   min-height: 60vh;
 }
 
 h1 {
-  font-size: 32px;
-  margin-bottom: 25px;
-  color: #c9a227;
-  border-bottom: 1px solid #333;
-  padding-bottom: 10px;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 14px;
 }
 
 h2 {
-  font-size: 24px;
-  margin: 25px 0 15px;
-  color: #d4af37;
+  font-size: 1.55rem;
+  font-weight: 600;
+  margin: 2rem 0 0.85rem;
+  color: var(--accent);
+  letter-spacing: -0.01em;
 }
 
 p {
-  margin-bottom: 15px;
-  color: #b0b0b0;
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
 }
 
-/* Главная - баннер */
+/* Главная — баннер */
 .hero {
   text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(180deg, #252525 0%, #1a1a1a 100%);
-  border-radius: 8px;
-  margin-bottom: 40px;
+  padding: 4rem 1.75rem;
+  background: linear-gradient(160deg, #1a1e28 0%, var(--bg-card) 45%, var(--bg) 100%);
+  border-radius: var(--radius);
+  margin-bottom: 3rem;
+  border: 1px solid var(--border);
 }
 
 .hero h1 {
   border: none;
-  font-size: 38px;
-  margin-bottom: 15px;
+  font-size: clamp(2.25rem, 5vw, 2.85rem);
+  margin-bottom: 1rem;
+  color: var(--text);
 }
 
 .hero p {
-  font-size: 18px;
-  max-width: 500px;
-  margin: 0 auto 25px;
+  font-size: 1.2rem;
+  max-width: 34rem;
+  margin: 0 auto 1.75rem;
+  line-height: 1.7;
 }
 
 .btn {
   display: inline-block;
-  background-color: #c9a227;
-  color: #1a1a1a;
-  padding: 12px 30px;
+  background-color: var(--accent);
+  color: #141210;
+  padding: 15px 34px;
   text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  margin-top: 10px;
-  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-top: 8px;
+  transition: background-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  box-shadow: 0 8px 28px rgba(240, 193, 75, 0.25);
 }
 
 .btn:hover {
-  background-color: #d4af37;
-  transform: scale(1.05);
+  background-color: #ffd060;
+  transform: scale(1.04);
+  box-shadow: 0 12px 36px rgba(240, 193, 75, 0.35);
 }
 
-/* Каталог - карточки товаров */
+/* Каталог */
 .watch-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .watch-card {
-  background-color: #252525;
-  border-radius: 8px;
-  padding: 20px;
+  background-color: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 1.5rem;
   text-align: center;
-  border: 1px solid #333;
-  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid var(--border);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
 .watch-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(201, 162, 39, 0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  border-color: rgba(240, 193, 75, 0.25);
 }
 
-.watch-card .watch-img {
+/* Фото часов: файлы из папки static/ */
+.watch-card .watch-photo {
   width: 100%;
-  height: 160px;
-  background-color: #333;
-  border-radius: 6px;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 48px;
-  color: #555;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1.1rem;
+  display: block;
+  background: linear-gradient(145deg, #252a35, #1a1e26);
 }
 
 .watch-card h3 {
-  color: #e0e0e0;
-  font-size: 18px;
-  margin-bottom: 8px;
+  color: var(--text);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .watch-card .price {
-  color: #c9a227;
-  font-size: 20px;
-  font-weight: bold;
+  color: var(--accent);
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
-/* Секции на страницах */
 .section {
-  margin-bottom: 40px;
+  margin-bottom: 2.75rem;
 }
 
-/* Контакты - список */
+/* Контакты */
 .contact-list {
   list-style: none;
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 .contact-list li {
-  padding: 12px 0;
-  border-bottom: 1px solid #333;
-  color: #b0b0b0;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 1.05rem;
 }
 
 .contact-list li strong {
-  color: #c9a227;
+  color: var(--accent);
   display: inline-block;
-  width: 140px;
+  min-width: 150px;
+  font-weight: 600;
 }
 
 /* Подвал */
 footer {
-  background-color: #0d0d0d;
-  padding: 30px 0;
-  margin-top: 50px;
-  border-top: 2px solid #333;
+  background-color: var(--bg-header);
+  padding: 2.25rem 0;
+  margin-top: 3rem;
+  border-top: 1px solid var(--border);
   text-align: center;
 }
 
 footer p {
-  margin-bottom: 5px;
-  color: #666;
-  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
 footer a {
-  color: #c9a227;
+  color: var(--accent);
   text-decoration: none;
 }
 
-/* Утилита для анимации появления при скролле */
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Анимации при скролле */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(22px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
 }
 
 .fade-in.visible {
@@ -234,15 +264,14 @@ footer a {
   transform: translateY(0);
 }
 
-/* Плавное появление при загрузке */
 .fade-on-load {
-  animation: fadeIn 0.8s ease-out forwards;
+  animation: fadeIn 0.85s ease-out forwards;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
@@ -250,7 +279,6 @@ footer a {
   }
 }
 
-/* Небольшая задержка для последовательного появления */
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
+.delay-1 { animation-delay: 0.12s; }
+.delay-2 { animation-delay: 0.22s; }
+.delay-3 { animation-delay: 0.32s; }
